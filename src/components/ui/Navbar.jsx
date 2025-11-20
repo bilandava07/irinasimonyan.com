@@ -54,21 +54,20 @@ export default function Navbar() {
     return (
         <nav ref={navRef} className="fixed top-0 left-0 w-full z-30">
             {/* Background */}
-            <div className={`w-full h-16 transition-colors duration-100 backdrop-blur-md ${isScrolled ? "bg-background/90 shadow-md" : "bg-transparent backdrop-blur-none"
+            <div className={`w-full h-18 border-b-2 border-foreground transition-colors duration-100 backdrop-blur-md ${isScrolled ? "bg-background/90 shadow-md" : "bg-transparent backdrop-blur-none"
                 }`}></div>
 
             {/* Content */}
             <div className={`absolute h-[100%] inset-0 flex items-center justify-between px-4 md:px-8 ${isScrolled ? "text-foreground/90" : "text-black/90"}`}>
                 {/* Logo Name */}
 
-                <a>
+                <Link to="/" className="text-2xl font-bold">
                     <h1>Iryna Symonian</h1>
-
-                </a>
-            
+                </Link>
 
 
-                {/* Right Section: Links + ThemeToggle + Mobile Menu */}
+
+                {/* Middle Section */}
                 <div className="flex items-center space-x-1 md:space-x-6">
                     {/* Desktop links */}
                     <div className="hidden md:flex items-center space-x-6 text-lg ">
@@ -94,6 +93,9 @@ export default function Navbar() {
                         </Link>
 
                     </div>
+
+
+
 
 
                     {/* Mobile Menu (hamburger) */}
@@ -136,7 +138,13 @@ export default function Navbar() {
                             </SheetContent>
                         </Sheet>
                     </div>
+
                 </div>
+                {/* Language Selection */}
+                <div className="hidden md:flex items-center space-x-6 text-lg ">
+                    ua | en
+                </div>
+
             </div>
         </nav>
     );
