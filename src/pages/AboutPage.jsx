@@ -5,7 +5,7 @@ export default function AboutPage() {
         <>
             <Navbar />
 
-             <h1>About Page</h1>;
+             <h1>About Page</h1>
         </>
 
     );
