@@ -76,7 +76,7 @@ export default function Navbar() {
                         >
                             Home
                         </Link>
-                        <Link to="/"
+                        <Link to="/paintings"
                             className="inline-block  hover:scale-105 transition-transform duration-300"
                         >
                             Paintings
