@@ -1,11 +1,11 @@
-import Navbar from "@/components/ui/Navbar";
-import PortfolioGrid from "../components/ui/PortfolioGrid";
+import PortfolioGrid from "@/components/ui/PortfolioGrid";
 
 import { useState, useEffect } from "react";
 
 import photos from "@/data/photos.js";
 import { Overlay } from "@radix-ui/react-dialog";
 import PhotoOverlay from "../components/ui/PhotoOverlay";
+import MasonryGallery from "../components/ui/MasonryGallery";
 
 
 export default function PaintingsPage() {
@@ -51,7 +51,11 @@ export default function PaintingsPage() {
 
 
 
+
         </>
 
     )
 }
+
+
+
