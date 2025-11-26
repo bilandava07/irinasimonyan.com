@@ -1,7 +1,19 @@
-import React, { useRef, useEffect, useState } from "react";
+import * as React from "react"
+import Autoplay from "embla-carousel-autoplay"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+} from "@/components/ui/carousel"
 import photos from "@/data/photos.js";
 
-const PaintingCarousel = ({onPhotoClick}) => {
+import { useTranslation } from 'react-i18next';
+
+
+export default function PaintingsCarousel({ onPhotoClick }) {
+
+    const { t } = useTranslation();
 
 
     const squarePhotos = photos.filter(photo => photo.orientation === "square");
@@ -14,91 +26,84 @@ const PaintingCarousel = ({onPhotoClick}) => {
         if (verticalPhotos[i]) interleavedPhotos.push(verticalPhotos[i]);
     }
 
-    const latestInterleaverPhotos = interleavedPhotos.slice(0,8)
+    const latestInterleaverPhotos = interleavedPhotos.slice(0, 8)
+
+    const [api, setApi] = React.useState()
+    const [current, setCurrent] = React.useState(0)
+    const [count, setCount] = React.useState(0)
 
 
-    const carouselRef = useRef(null);
-    const [slideWidth, setSlideWidth] = useState(0);
 
-
-
-    // Measure the width of one slide dynamically
-    useEffect(() => {
-        const firstSlide = carouselRef.current?.querySelector(".carousel-slide");
-        if (firstSlide) {
-            setSlideWidth(firstSlide.offsetWidth + 16); // 16 = gap-4 in px
-        }
-    }, []);
-
-    const scroll = (direction) => {
-        if (carouselRef.current && slideWidth) {
-            carouselRef.current.scrollBy({
-                left: direction === "left" ? -slideWidth : slideWidth,
-                behavior: "smooth",
-            });
-        }
-    };
+    const plugin = React.useRef(
+        Autoplay({ delay: 3000, stopOnInteraction: true })
+    )
 
     return (
-        <div className="relative w-full">
-   
+        <>
+
+            <div className="relative w-full lg:px-5 2xl:px-15">
+
+                <Carousel
+                    className="w-full  2xl:h-[50vh] mx-auto"
+                    setApi={setApi}
+                    opts={{
+                        align: "start",       
+                        containScroll: "trim",
+                        loop: true,
+                    }}
+                >
+                    <h2 className="absolute flex justify-center items-center -translate-y-30 w-full text-3xl font-light mb-6">{t("gallery")}</h2>
+
+                    {/* SLIDES */}
+                    <CarouselContent>
+                        {latestInterleaverPhotos.map((photo) => (
+                            <CarouselItem
+                                key={photo.id}
+                                className=" md:basis-1/4 2xl:basis-1/5 flex justify-center items-center"
+                            >
+
+                                <img
+                                    src={photo.imageUrl}
+                                    alt={`Painting ${photo.id}`}
+                                    className={`${photo.orientation === "square" ? "lg:w-50 xl:w-90 2xl:w-110 " : "lg:w-45 xl:w-70 2xl:w-90 "} cursor-pointer`}
+                                    onClick={() => onPhotoClick(photo)}
+                                />
 
 
-            {/* Carousel */}
-            <div
-                ref={carouselRef}
-                className="flex flex-row-reverse gap-5 overflow-hidden scroll-smooth py-4 px-2"
-            >
-                {latestInterleaverPhotos.map((photo) => (
-                    <div
-                        key={photo.id}
-                        className={`
-            carousel-slide
-            flex-shrink-0
-            overflow-hidden
-            cursor-pointer
-            transition-transform
-            hover:scale-105
-            duration-300
-            flex
-            items-center
-            justify-center
-            ${photo.orientation === "square" ? "lg:w-50 xl:w-90 2xl:w-110 " : "lg:w-45 xl:w-80 2xl:w-90 "}
-            `}
-                    >
-                        <img
-                            src={photo.imageUrl}
-                            alt={`Painting ${photo.id}`}
-                            className="w-full h-auto object-cover"
-                            onClick={()=>onPhotoClick(photo)}
-                        />
+                            </CarouselItem>
+
+
+
+                        ))}
+                    </CarouselContent>
+
+
+
+
+
+
+                    <div className="absolute translate-20  flex gap-4 ">
+                        <button
+                            className=" bg-black/40 text-white p-2 rounded-full cursor-pointer"
+                            onClick={() => api?.scrollPrev()}
+                        >
+                            <ChevronLeft />
+                        </button>
+
+                        <button
+                            className="bg-black/40 text-white p-2 rounded-full cursor-pointer "
+                            onClick={() => api?.scrollNext()}
+                        >
+                            <ChevronRight />
+                        </button>
+
+
+
+
                     </div>
-                ))}
-
+                </Carousel>
             </div>
 
-
-            {/* Scroll Buttons */}
-
-            <div className="ml-5 flex gap-2">
-
-                <button
-                    onClick={() => scroll("left")}
-                    className="  z-10 bg-white bg-opacity-70 hover:bg-opacity-100 rounded-full p-2 shadow"
-                >
-                    ◀
-                </button>
-                <button
-                    onClick={() => scroll("right")}
-                    className="z-10 bg-white bg-opacity-70 hover:bg-opacity-100 rounded-full p-2 shadow"
-                >
-                    ▶
-                </button>
-
-
-            </div>
-        </div>
-    );
-};
-
-export default PaintingCarousel;
+        </>
+    )
+}
