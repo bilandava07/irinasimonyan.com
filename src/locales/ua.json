@@ -1,6 +1,9 @@
 {
   "home_nav_link": "головна",
-  "paintings_nav_link": "малюнки",
-  "workshops_nav_link": "мастеркласи",
-  "about_nav_link": "про мене" 
+  "paintings_nav_link": "роботи",
+  "workshops_nav_link": "майстер-класи",
+  "about_nav_link": "про мене",
+  
+  "gallery": "Галерея робіт"
+
 }
