@@ -48,7 +48,7 @@ export default function Navbar({ activeSection }) {
             </div>
 
             {/* Middle: section links */}
-            <div className="flex flex-col items-end space-y-6  md:text-sm xl:text-base 2xl:text-xl">
+            <div className="flex flex-col items-end space-y-6  md:text-sm xl:text-base 2xl:text-xl whitespace-nowrap">
                 {navItems.map((item) => (
                     <a
                         key={item.id}
