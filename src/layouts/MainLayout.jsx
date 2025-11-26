@@ -45,6 +45,22 @@ export default function MainLayout() {
     setSelectedPhoto(null);
   }
 
+
+    // Disable scroll when any overlay is open
+    const isOverlayOpen = selectedPhoto !== null ;
+
+    useEffect(() => {
+        if (isOverlayOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [isOverlayOpen]);
+
+
   return (
     <>
 
