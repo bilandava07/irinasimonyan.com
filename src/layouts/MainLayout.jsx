@@ -68,7 +68,7 @@ export default function MainLayout() {
 
       <div className="flex w-full ">
         {/* LOGO — POSITIONED ABSOLUTELY & INDEPENDENTLY */}
-        <div className="fixed top-6 left-6 z-50">
+        <div className="fixed top-6 left-6 z-20">
           <h2 className="text-3xl md:text-3xl font-light whitespace-nowrap">
             Irina Simonyan
           </h2>
