@@ -82,7 +82,7 @@ for folder, category in CATEGORY_FOLDERS.items():
 
 
             # Open JPG/PNG to determine displayed orientation
-            with Image.open(prod_file_path) as img:
+            with Image.open(fullres_output_path) as img:
                 width, height = img.size
                 if width > height:
                     orientation = "wide"
