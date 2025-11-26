@@ -120,7 +120,14 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  html {
+    @apply scroll-smooth;
+
+  }
 }
+
+
 
 .main-container {
   scroll-snap-type: y mandatory;

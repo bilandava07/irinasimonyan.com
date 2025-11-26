@@ -5,8 +5,13 @@ import ThreadsIcon from "@/icons/ThreadsIcon.svg?react";
 import { useTranslation } from 'react-i18next';
 
 
-export default function Navbar({ activeIndex, onNavigate }) {
-    const labels = ["home_nav_link", "paintings_nav_link", "workshops_nav_link", "about_nav_link"];
+export default function Navbar({ activeSection }) {
+    const navItems = [
+        { id: "home", label: "home_nav_link" },
+        { id: "paintings", label: "paintings_nav_link" },
+        { id: "workshops", label: "workshops_nav_link" },
+        { id: "about", label: "about_nav_link" }
+    ];
 
     const { t, i18n } = useTranslation();
 
@@ -14,7 +19,18 @@ export default function Navbar({ activeIndex, onNavigate }) {
 
 
     return (
-        <nav className="flex flex-col justify-between h-full p-10 fixed right-0 top-0 w-[12vw] min-w-[120px]">
+        <nav className="
+            flex
+            flex-col
+            justify-between 
+            h-full 
+            p-10 
+            fixed 
+            right-0 
+            top-0 
+            w-[12vw] 
+            min-w-[120px]
+            bg-white">
             {/* Top: language */}
             <div className="flex justify-end">
 
@@ -33,14 +49,17 @@ export default function Navbar({ activeIndex, onNavigate }) {
 
             {/* Middle: section links */}
             <div className="flex flex-col items-end space-y-6  md:text-sm xl:text-base 2xl:text-xl">
-                {labels.map((label, i) => (
-                    <button
-                        key={i}
-                        className={`${activeIndex === i ? "font-medium scale-105 text-black" : "font-light text-gray-700"} cursor-pointer link-hover`}
-                        onClick={() => onNavigate(i)}
+                {navItems.map((item) => (
+                    <a
+                        key={item.id}
+                        href={`#${item.id}`}
+                        className={`${activeSection === item.id
+                                ? "font-medium scale-105 text-black"
+                                : "font-light text-gray-700"
+                            } cursor-pointer link-hover`}
                     >
-                        {t(label)}
-                    </button>
+                        {t(item.label)}
+                    </a>
                 ))}
             </div>
 
