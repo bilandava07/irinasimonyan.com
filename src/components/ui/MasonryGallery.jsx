@@ -7,7 +7,7 @@ export default function MasonryGallery({ photos, scrollRef, onPhotoClick }) {
       className="w-full h-full overflow-hidden"
     >
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 4 }}>
-        <Masonry >
+        <Masonry className="p-5" > 
           {photos.map((photo) => (
             <img
               key={photo.id}
