@@ -12,12 +12,7 @@ JS_FILE = "src/data/photos.js"
 PUBLIC_DIR = os.path.join(SCRIPT_DIR, "..", "public/images")
 THUMBNAILS_DIR = os.path.join(SCRIPT_DIR, "..", "public/images_thumbnails")
 
-CATEGORY_FOLDERS = {
-    "portraits": "Portraits",
-    "landscapes": "Landscapes",
-    "still": "Still Life",
-    "animals" : "Animals"
-}
+
 
 photos = []
 photo_id = 1
@@ -26,20 +21,16 @@ photo_id = 1
 THUMB_MAX_SIZE = 750
 FULLRES_MAX_SIZE = 1920  
 
-for folder, category in CATEGORY_FOLDERS.items():
-    
-    incoming_folder_path = os.path.join(INCOMING_DIR, folder) # Incoming raw and jpg images
-    
-    public_folder_path = os.path.join(PUBLIC_DIR, folder) # Full res public images
-    
-    thumbnail_folder_path = os.path.join(THUMBNAILS_DIR, folder) # Compressed thumbnail images
+for folder in os.listdir(INCOMING_DIR):
+    incoming_folder_path = os.path.join(INCOMING_DIR, folder)
+    if not os.path.isdir(incoming_folder_path):
+        continue  # skip files
+
+    public_folder_path = os.path.join(PUBLIC_DIR, folder)
+    thumbnail_folder_path = os.path.join(THUMBNAILS_DIR, folder)
 
     os.makedirs(public_folder_path, exist_ok=True)
     os.makedirs(thumbnail_folder_path, exist_ok=True)
-
-
-    if not os.path.exists(incoming_folder_path):
-        continue
 
     for filename in os.listdir(incoming_folder_path):
         # Only process original RAW files for metadata
@@ -98,7 +89,7 @@ for folder, category in CATEGORY_FOLDERS.items():
                 "id": photo_id,
                 "imageUrl": f"/images_thumbnails/{folder}/{filename}",  # thumbnail
                 "fullResUrl": f"/images/{folder}/{filename}",           # full-res
-                "category": category,
+                "category": folder,
                 "orientation": orientation
             })
             photo_id += 1
@@ -109,7 +100,7 @@ for folder, category in CATEGORY_FOLDERS.items():
 js_array_content = json.dumps(photos, indent=4, ensure_ascii=False)
 
 # Wrap in JS module with CATEGORIES import
-js_content = f"""import {{ CATEGORIES }} from "@/constants/photo_categories";
+js_content = f"""
 
 const photos = {js_array_content};
 
