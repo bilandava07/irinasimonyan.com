@@ -8,8 +8,8 @@ import { useTranslation } from 'react-i18next';
 export default function Navbar({ activeSection }) {
     const navItems = [
         { id: "home", label: "home_nav_link" },
+        { id: "gallery", label: "gallery_nav_link" },
         { id: "paintings", label: "paintings_nav_link" },
-        { id: "workshops", label: "workshops_nav_link" },
         { id: "about", label: "about_nav_link" }
     ];
 

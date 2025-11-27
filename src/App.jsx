@@ -2,11 +2,11 @@ import { useEffect, useState, useRef } from "react";
 import Navbar from "@/components/ui/Navbar";
 import Home from "@/sections/Home";
 import Paintings from "@/sections/Paintings";
-import Workshops from "@/sections/Workshops";
+import Portfolio from "@/sections/Portfolio";
 import About from "@/sections/About";
 import PhotoOverlay from "@/components/ui/PhotoOverlay";
 
-const sections = ["home", "paintings", "workshops", "about"];
+const sections = ["home", "gallery", "paintings",  "about"];
 function App() {
 const [selectedPhoto, setSelectedPhoto] = useState(null);
 
@@ -79,8 +79,8 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
           className="flex-1 h-full overflow-y-hidden scroll-smooth"
         >
           <section id="home" className="h-screen"><Home /></section>
-          <section id="paintings" className="h-screen"><Paintings onPhotoClick={handlePhotoClick}/></section>
-          <section id="workshops" className="h-screen"><Workshops onPhotoClick={handlePhotoClick}/></section>
+          <section id="gallery" className="h-screen"><Paintings onPhotoClick={handlePhotoClick}/></section>
+          <section id="paintings" className="h-screen"><Portfolio onPhotoClick={handlePhotoClick}/></section>
           <section id="about" className="h-screen"><About /></section>
         </div>
 
