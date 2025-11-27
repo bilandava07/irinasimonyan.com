@@ -1,6 +1,9 @@
 {
   "home_nav_link": "home",
   "paintings_nav_link": "paintings",
+
+  "paintings_nav_link": "paintings",
+  "gallery_nav_link": "gallery",
   "workshops_nav_link": "workshops",
   "about_nav_link": "about",
 
