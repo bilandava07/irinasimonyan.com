@@ -4,6 +4,11 @@
   "workshops_nav_link": "майстер-класи",
   "about_nav_link": "про мене",
   
-  "gallery": "Галерея робіт"
+  "gallery": "Галерея робіт",
+
+  "cat_portraits" : "портрети",
+  "cat_landscapes" : "краєвиди",
+  "cat_still" : "натюрморти",
+  "cat_animals" : "тварини"
 
 }
