@@ -68,10 +68,12 @@ export default function MainLayout() {
 
       <div className="flex w-full ">
         {/* LOGO — POSITIONED ABSOLUTELY & INDEPENDENTLY */}
-        <div className="fixed top-6 left-6 z-20">
-          <h2 className="text-3xl md:text-3xl font-light whitespace-nowrap">
-            Irina Simonyan
-          </h2>
+        <div className="fixed top-6 left-6  z-20    md:w-30 xl:w-50  2xl:w-60  ">
+          <img 
+            src="/images/logo.png"
+            />
+
+
         </div>
 
         {/* Scrollable Content */}
