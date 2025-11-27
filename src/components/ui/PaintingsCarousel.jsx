@@ -29,8 +29,6 @@ export default function PaintingsCarousel({ onPhotoClick }) {
     const latestInterleaverPhotos = interleavedPhotos.slice(0, 8)
 
     const [api, setApi] = React.useState()
-    const [current, setCurrent] = React.useState(0)
-    const [count, setCount] = React.useState(0)
 
 
 
@@ -44,7 +42,7 @@ export default function PaintingsCarousel({ onPhotoClick }) {
             <div className="relative w-full lg:px-5 2xl:px-15">
 
                 <Carousel
-                    className="w-full  2xl:h-[50vh] mx-auto"
+                    className="w-full   mx-auto"
                     setApi={setApi}
                     opts={{
                         align: "start",       
@@ -55,17 +53,17 @@ export default function PaintingsCarousel({ onPhotoClick }) {
                     <h2 className="absolute flex justify-center items-center -translate-y-30 w-full text-3xl font-light mb-6">{t("gallery")}</h2>
 
                     {/* SLIDES */}
-                    <CarouselContent>
+                    <CarouselContent >
                         {latestInterleaverPhotos.map((photo) => (
                             <CarouselItem
                                 key={photo.id}
-                                className=" md:basis-1/4 2xl:basis-1/5 flex justify-center items-center"
+                                className="py-20  md:basis-1/4 2xl:basis-1/5 flex justify-center items-center"
                             >
 
                                 <img
                                     src={photo.imageUrl}
                                     alt={`Painting ${photo.id}`}
-                                    className={`${photo.orientation === "square" ? "lg:w-50 xl:w-90 2xl:w-110 " : "lg:w-45 xl:w-70 2xl:w-90 "} cursor-pointer`}
+                                    className={`${photo.orientation === "square" ? "lg:w-50 xl:w-90 2xl:w-110 " : "lg:w-45 xl:w-70 2xl:w-90 "} p-4 cursor-pointer transition-transform duration-300 hover:scale-103 shadow-2xl`}
                                     onClick={() => onPhotoClick(photo)}
                                 />
 
@@ -84,17 +82,17 @@ export default function PaintingsCarousel({ onPhotoClick }) {
 
                     <div className="absolute translate-20  flex gap-4 ">
                         <button
-                            className=" bg-black/40 text-white p-2 rounded-full cursor-pointer"
+                            className="chevron-container"
                             onClick={() => api?.scrollPrev()}
                         >
-                            <ChevronLeft />
+                            <ChevronLeft className="chevron-sizing" />
                         </button>
 
                         <button
-                            className="bg-black/40 text-white p-2 rounded-full cursor-pointer "
+                            className="chevron-container "
                             onClick={() => api?.scrollNext()}
                         >
-                            <ChevronRight />
+                            <ChevronRight className="chevron-sizing" />
                         </button>
 
 
