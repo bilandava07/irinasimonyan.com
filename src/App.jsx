@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import Navbar from "@/components/ui/Navbar";
 import Home from "@/sections/Home";
-import Paintings from "@/sections/Paintings";
+import Gallery from "@/sections/Gallery";
 import Portfolio from "@/sections/Portfolio";
 import About from "@/sections/About";
 import PhotoOverlay from "@/components/ui/PhotoOverlay";
@@ -65,7 +65,7 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
 
       <div className="flex w-full h-screen  ">
         {/* LOGO — POSITIONED ABSOLUTELY & INDEPENDENTLY */}
-        <div className="fixed top-6 left-6  z-20    md:w-30 xl:w-50  2xl:w-60  ">
+        <div className="fixed top-0 left-0  lg: p-4 2xl:p-6 rounded-br-4xl bg-white  z-20 backdrop-blur-md  md:w-40 xl:w-50  2xl:w-80  ">
           <img 
             src="/images/logo.png"
             />
@@ -79,7 +79,7 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
           className="flex-1 h-full overflow-y-auto scroll-smooth snap-y snap-mandatory scrollbar-hide"
         >
           <section id="home" className="h-screen snap-start"><Home /></section>
-          <section id="gallery" className="h-screen snap-start"><Paintings onPhotoClick={handlePhotoClick}/></section>
+          <section id="gallery" className="h-screen snap-start"><Gallery onPhotoClick={handlePhotoClick}/></section>
           <section id="paintings" className="h-screen snap-start"><Portfolio onPhotoClick={handlePhotoClick}/></section>
           <section id="about" className="h-screen snap-start"><About /></section>
         </div>
