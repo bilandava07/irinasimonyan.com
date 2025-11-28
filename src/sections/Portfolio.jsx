@@ -111,7 +111,7 @@ export default function Portfolio({ onPhotoClick }) {
 
       </div>
 
-      <div className="flex h-full p-15 w-full">
+      <div className="flex h-full md:p-4 lg:p-5 2xl:p-15 w-full">
 
         {/* Portfolio */}
         <MasonryGallery photos={filteredPhotos} scrollRef={scrollRef} onPhotoClick={onPhotoClick} />
