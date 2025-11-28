@@ -63,7 +63,7 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
 
 
 
-      <div className="flex w-full ">
+      <div className="flex w-full h-screen  ">
         {/* LOGO — POSITIONED ABSOLUTELY & INDEPENDENTLY */}
         <div className="fixed top-6 left-6  z-20    md:w-30 xl:w-50  2xl:w-60  ">
           <img 
@@ -76,12 +76,12 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
         {/* Scrollable Content */}
         <div
 
-          className="flex-1 h-full overflow-y-hidden scroll-smooth"
+          className="flex-1 h-full overflow-y-auto scroll-smooth snap-y snap-mandatory scrollbar-hide"
         >
-          <section id="home" className="h-screen"><Home /></section>
-          <section id="gallery" className="h-screen"><Paintings onPhotoClick={handlePhotoClick}/></section>
-          <section id="paintings" className="h-screen"><Portfolio onPhotoClick={handlePhotoClick}/></section>
-          <section id="about" className="h-screen"><About /></section>
+          <section id="home" className="h-screen snap-start"><Home /></section>
+          <section id="gallery" className="h-screen snap-start"><Paintings onPhotoClick={handlePhotoClick}/></section>
+          <section id="paintings" className="h-screen snap-start"><Portfolio onPhotoClick={handlePhotoClick}/></section>
+          <section id="about" className="h-screen snap-start"><About /></section>
         </div>
 
         {/* Navbar */}
