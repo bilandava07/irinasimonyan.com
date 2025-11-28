@@ -57,13 +57,13 @@ export default function PaintingsCarousel({ onPhotoClick }) {
                         {latestInterleaverPhotos.map((photo) => (
                             <CarouselItem
                                 key={photo.id}
-                                className="py-20  md:basis-1/4 2xl:basis-1/5 flex justify-center items-center"
+                                className="py-20  md:basis-1/4 lg:basis-1/4 2xl:basis-1/5 flex justify-center items-center"
                             >
 
                                 <img
                                     src={photo.imageUrl}
                                     alt={`Painting ${photo.id}`}
-                                    className={`${photo.orientation === "square" ? "lg:w-50 xl:w-90 2xl:w-110 " : "lg:w-45 xl:w-70 2xl:w-90 "} p-4 cursor-pointer transition-transform duration-300 hover:scale-103 shadow-2xl`}
+                                    className={`${photo.orientation === "square" ? "lg:w-50 xl:w-90 2xl:w-120 " : "lg:w-45 xl:w-70 2xl:w-110 "} md:p-2 lg:p-2 xl:p-3 2xl:p-4h cursor-pointer transition-transform duration-300 hover:scale-103 shadow-2xl`}
                                     onClick={() => onPhotoClick(photo)}
                                 />
 
