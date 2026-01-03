@@ -1,7 +1,15 @@
 export default function Workshops() {
+
+  const bgImagePath = "/images/workshops_bg.webp"
   return (
-    <section className="section h-full bg-green-800 flex items-center justify-center">
-      <h1 className="text-5xl font-bold text-white">Workshops</h1>
+    <section className="section h-full relative overflow-hidden">
+      <img
+       src={bgImagePath}
+       alt="Artist giving instructions during the workshop"
+       loading="lazy"
+       className="absolute inset-0 w-full h-auto object-cover "
+        />
+
     </section>
   );
 }
