@@ -5,8 +5,9 @@ import Gallery from "@/sections/Gallery";
 import Portfolio from "@/sections/Portfolio";
 import About from "@/sections/About";
 import PhotoOverlay from "@/components/ui/PhotoOverlay";
+import Workshops from "./sections/Workshops";
 
-const sections = ["home", "gallery", "paintings",  "about"];
+const sections = ["home", "gallery", "paintings",  "workshops", "about"];
 function App() {
 const [selectedPhoto, setSelectedPhoto] = useState(null);
 
@@ -65,7 +66,7 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
 
       <div className="flex w-full h-screen  ">
         {/* LOGO — POSITIONED ABSOLUTELY & INDEPENDENTLY */}
-        <div className="fixed top-0 left-0 md:p-3 lg:p-4 xl:p-5 2xl:p-6 rounded-br-4xl  z-20 backdrop-blur-md sd:w-20 md:w-40 xl:w-50  2xl:w-65">
+        <div className="fixed top-0 left-0 md:p-3 lg:p-4 xl:p-5 2xl:p-6 rounded-br-4xl  z-20 backdrop-blur-md sd:w-20 md:w-40 xl:w-50  2xl:w-70">
           <img 
             src="/images/logo.png"
             />
@@ -81,6 +82,7 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
           <section id="home" className="h-screen snap-start"><Home /></section>
           <section id="gallery" className="h-screen snap-start"><Gallery onPhotoClick={handlePhotoClick}/></section>
           <section id="paintings" className="h-screen snap-start"><Portfolio onPhotoClick={handlePhotoClick}/></section>
+          <section id="workshops" className="h-screen snap-start"><Workshops /></section>
           <section id="about" className="h-screen snap-start"><About /></section>
         </div>
 
