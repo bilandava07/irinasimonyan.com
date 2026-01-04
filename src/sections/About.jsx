@@ -6,11 +6,12 @@ export default function About() {
 
   const bgImagePath = "/images/about_me_bg.webp"
   return (
-    <section className="section h-full w-full overflow-hidden">
+    <section className="relative section h-full w-full overflow-hidden">
 
       <div className="flex h-full w-full text-justify">
 
-        <div className="lg:my-20 2xl:my-40 lg:mx-20 2xl:mx-40 flex-1 md:flex-[1] lg:flex-[3] 2xl:flex-[2] flex flex-col">
+
+        <div className="lg:mt-20 2xl:mt-40 lg:mx-20 2xl:mx-40 flex-1 md:flex-[1] lg:flex-[3] 2xl:flex-[2] flex flex-col">
 
           <h1 className="lg:pb-8 2xl:pb-15  flex font-normal font-nanum justify-around lg:text-3xl 2xl:text-5xl">{t("about_me_header")}</h1>
 
@@ -19,6 +20,7 @@ export default function About() {
             <p>{t("about_me_p2")}</p>
             <p>{t("about_me_p3")}</p>
           </div>
+
 
         </div>
 
@@ -31,6 +33,11 @@ export default function About() {
         </div>
 
       </div>
+
+      <div className="absolute bottom-0 left-0 px-2 py-1  text-sm text-gray-500">
+        @ 2026 Irina Simonyan. All rights reserved
+      </div>
+
     </section>
   );
 }
