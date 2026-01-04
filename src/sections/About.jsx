@@ -10,7 +10,7 @@ export default function About() {
 
       <div className="flex h-full w-full">
 
-        <div className="lg:my-20 2xl:my-50 lg:mx-20 2xl:mx-40 flex-1 md:flex-[1] lg:flex-[3] 2xl:flex-[2] flex flex-col">
+        <div className="lg:my-20 2xl:my-40 lg:mx-20 2xl:mx-40 flex-1 md:flex-[1] lg:flex-[3] 2xl:flex-[2] flex flex-col">
 
           <h1 className="lg:pb-8 2xl:pb-15  flex font-normal justify-around lg:text-3xl 2xl:text-5xl">{t("about_me_header")}</h1>
 
