@@ -66,7 +66,21 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
 
       <div className="flex w-full h-screen  ">
         {/* LOGO — POSITIONED ABSOLUTELY & INDEPENDENTLY */}
-        <div className="fixed top-0 left-0 md:p-3 lg:p-4 xl:p-5 2xl:p-6 rounded-br-4xl  z-20 backdrop-blur-md sd:w-20 md:w-40 xl:w-50  2xl:w-70">
+        <div className="fixed
+         top-0
+         left-0
+         md:p-3
+         lg:p-4
+         xl:p-5
+         2xl:p-6
+         rounded-br-4xl
+         z-20
+         backdrop-blur-md 
+         sd:w-20
+         md:w-45
+         xl:w-55
+         2xl:w-70">
+
           <img 
             src="/images/logo.png"
             />
