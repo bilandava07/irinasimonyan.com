@@ -32,7 +32,7 @@ export default function Home({onLoad}) {
         {/* RIGHT IMAGE */}
         <div className="h-full md:-ml-5 lg:-ml-16 2xl:-ml-28">
           <img
-            src="/images/portraits/test.png"
+            src="/images/portraits/home_main_portrait.jpg"
             alt="Painting"
             className="h-full object-cover"
             onLoad={onLoad}
