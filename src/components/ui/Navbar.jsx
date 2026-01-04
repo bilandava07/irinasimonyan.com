@@ -25,7 +25,7 @@ export default function Navbar({ activeSection }) {
             flex-col
             justify-between 
             h-full 
-            p-10 
+            lg:p-5 2xl:p-10
             fixed 
             right-0 
             top-0 
