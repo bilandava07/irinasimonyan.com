@@ -7,9 +7,9 @@ import About from "@/sections/About";
 import PhotoOverlay from "@/components/ui/PhotoOverlay";
 import Workshops from "./sections/Workshops";
 
-const sections = ["home", "gallery", "paintings",  "workshops", "about"];
+const sections = ["home", "gallery", "paintings", "workshops", "about"];
 function App() {
-const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
 
 
   const [activeSection, setActiveSection] = useState("home");
@@ -44,19 +44,19 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
   }
 
 
-    // Disable scroll when any overlay is open
-    const isOverlayOpen = selectedPhoto !== null ;
+  // Disable scroll when any overlay is open
+  const isOverlayOpen = selectedPhoto !== null;
 
-    useEffect(() => {
-        if (isOverlayOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
-        return () => {
-            document.body.style.overflow = "";
-        };
-    }, [isOverlayOpen]);
+  useEffect(() => {
+    if (isOverlayOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOverlayOpen]);
 
 
   return (
@@ -79,11 +79,14 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
          sd:w-20
          md:w-45
          xl:w-55
-         2xl:w-70">
+         2xl:w-70
+          
+         ">
 
-          <img 
-            src="/images/logo.png"
-            />
+          <a href="#home">
+            <img className="hover:scale-105 transition-transform duration-300" src="/images/logo.png" />
+          </a>
+
 
 
         </div>
@@ -94,8 +97,8 @@ const [selectedPhoto, setSelectedPhoto] = useState(null);
           className="flex-1 h-full overflow-y-auto scroll-smooth snap-y snap-mandatory scrollbar-hide"
         >
           <section id="home" className="h-screen snap-start"><Home /></section>
-          <section id="gallery" className="h-screen snap-start"><Gallery onPhotoClick={handlePhotoClick}/></section>
-          <section id="paintings" className="h-screen snap-start"><Portfolio onPhotoClick={handlePhotoClick}/></section>
+          <section id="gallery" className="h-screen snap-start"><Gallery onPhotoClick={handlePhotoClick} /></section>
+          <section id="paintings" className="h-screen snap-start"><Portfolio onPhotoClick={handlePhotoClick} /></section>
           <section id="workshops" className="h-screen snap-start"><Workshops /></section>
           <section id="about" className="h-screen snap-start"><About /></section>
         </div>
