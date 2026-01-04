@@ -12,7 +12,7 @@ JS_FILE = "src/data/photos.js"
 PUBLIC_DIR = os.path.join(SCRIPT_DIR, "..", "public/images")
 THUMBNAILS_DIR = os.path.join(SCRIPT_DIR, "..", "public/images_thumbnails")
 
-
+IGNORED_FOLDERS = ('about', 'workshops')
 
 photos = []
 photo_id = 1
@@ -22,6 +22,7 @@ THUMB_MAX_SIZE = 750
 FULLRES_MAX_SIZE = 1920  
 
 for folder in os.listdir(INCOMING_DIR):
+    
     incoming_folder_path = os.path.join(INCOMING_DIR, folder)
     if not os.path.isdir(incoming_folder_path):
         continue  # skip files
@@ -53,7 +54,8 @@ for folder in os.listdir(INCOMING_DIR):
                 "-y",
                 "-i", prod_file_path,
                 "-vf", f"scale='if(gt(iw,ih),{FULLRES_MAX_SIZE},-1)':'if(gt(ih,iw),{FULLRES_MAX_SIZE},-1)'",
-                "-q:v", "2",  # high quality
+                "-map_metadata", "-1",          # strip EXIF/metadata
+                "-q:v", "5",  # high quality
                 fullres_output_path
             ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
             
@@ -65,7 +67,8 @@ for folder in os.listdir(INCOMING_DIR):
                 "-y",
                 "-i", prod_file_path,
                 "-vf", f"scale='if(gt(iw,ih),{THUMB_MAX_SIZE},-1)':'if(gt(ih,iw),{THUMB_MAX_SIZE},-1)'",
-                "-q:v", "2",  
+                "-map_metadata", "-1",          # strip EXIF/metadata
+                "-q:v", "10", # lower quality for the thumbnails  
                 thumb_output_path
             ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
             
@@ -83,17 +86,20 @@ for folder in os.listdir(INCOMING_DIR):
                     orientation = "square"
 
             production_image_url = f"/images/{folder}/{filename}"
-
-            # Add to photos array with both thumbnail and full-res URLs
-            photos.append({
-                "id": photo_id,
-                "imageUrl": f"/images_thumbnails/{folder}/{filename}",  # thumbnail
-                "fullResUrl": f"/images/{folder}/{filename}",           # full-res
-                "category": folder,
-                "orientation": orientation
-            })
-            photo_id += 1
-                    
+            
+            
+            if folder not in IGNORED_FOLDERS:
+            
+                # Add to photos array with both thumbnail and full-res URLs
+                photos.append({
+                    "id": photo_id,
+                    "imageUrl": f"/images_thumbnails/{folder}/{filename}",  # thumbnail
+                    "fullResUrl": f"/images/{folder}/{filename}",           # full-res
+                    "category": folder,
+                    "orientation": orientation
+                })
+                photo_id += 1
+                        
                     
 
 # Convert JSON to JS array string
