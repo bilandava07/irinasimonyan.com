@@ -16,15 +16,15 @@ export default function Workshops() {
 
           <div className='md:mt-5 lg:mt-30 2xl:mt-50'>
 
-            <h1 className="lg:pb-9 2xl:pb-15 flex font-normal justify-around lg:text-3xl 2xl:text-5xl">{t("workshops_header")}</h1>
+            <h1 className="lg:pb-9 2xl:pb-15 flex font-normal font-nanum justify-around lg:text-3xl 2xl:text-5xl">{t("workshops_header")}</h1>
 
-            <div className="flex flex-col gap-5 font-thin  lg:text-xl 2xl:text-3xl leading-snug">
+            <div className="flex flex-col gap-5 font-thin lg:text-xl 2xl:text-3xl leading-snug">
               <p>{t("workshops_p1")}</p>
               <p>{t("workshops_p2")}</p>
               <p>{t("workshops_p3")}</p>
             </div>
 
-            <div className='lg:text-xl 2xl:text-2xl lg:pt-10 2xl:pt-10  flex justify-end animate-float'>
+            <div className='lg:text-xl 2xl:text-2xl lg:pt-10 2xl:pt-15  flex justify-end animate-float'>
               <a
                 href="https://www.instagram.com/art.prostir.lutsk/"
                 target="_blank"

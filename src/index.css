@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Limelight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Nanum+Myeongjo&display=swap');
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -6,9 +6,8 @@
 
 
 @theme {
-  --font-funnel: "Funnel Sans", sans-serif;
   --font-bodoni: "Libre Bodoni", serif;
-  --font-limelight: "Limelight", cursive;
+  --font-nanum: "Nanum Myeongjol", serif;
 }
 
 @custom-variant dark (&:is(.dark *));

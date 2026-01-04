@@ -50,7 +50,7 @@ export default function PaintingsCarousel({ onPhotoClick }) {
                         loop: true,
                     }}
                 >
-                    <h2 className="absolute flex justify-center items-center font-normal lg:-translate-y-10 2xl:-translate-y-30 w-full lg:text-2xl 2xl:text-3xl font-light mb-6">{t("gallery")}</h2>
+                    <h2 className="absolute flex justify-center items-center font-nanum lg:-translate-y-10 2xl:-translate-y-30 w-full lg:text-2xl 2xl:text-3xl  mb-6">{t("gallery")}</h2>
 
                     {/* SLIDES */}
                     <CarouselContent >
