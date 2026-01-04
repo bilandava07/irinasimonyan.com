@@ -1,18 +1,23 @@
 {
   "home_nav_link": "home",
   "paintings_nav_link": "paintings",
-
   "paintings_nav_link": "paintings",
   "gallery_nav_link": "gallery",
   "workshops_nav_link": "workshops",
   "about_nav_link": "about",
-
   "gallery": "Gallery",
+  "cat_portraits": "portraits",
+  "cat_landscapes": "landscapes",
+  "cat_still": "still life",
+  "cat_animals": "animals",
 
-  "cat_portraits" : "portraits",
-  "cat_landscapes" : "landscapes",
-  "cat_still" : "still life",
-  "cat_animals" : "animals"
+  "workshops_header": "Workshops",
+  "workshops_p1": "I run painting workshops for both adults and children. My goal is to show that anyone can paint.",
+  "workshops_p2": "I am fascinated by the interaction with people, especially the moment when fear yields to the desire to create. I always say, “Trust the process.” Seeing the surprise and joy on people’s faces when they look at their work and ask, “Did I really create this?” is one of the most rewarding parts of my journey.",
+  "workshops_p3": "During the sessions, I guide you step by step – from developing the idea to choosing colours and letting go of the fear of making mistakes. My workshops are suitable both for complete beginners and for those who simply want to spend time creatively.",
 
-
+  "about_me_header": "About me",
+  "about_me_p1": "I am a contemporary artist working with color and emotion. I am endlessly inspired by people – especially their faces. Eyes hold a special place in my artworks: through them, I try to capture not just a person’s appearance, but their inner essence. I want the viewer to feel the presence of the person I’ve painted, to understand their story without words.",
+  "about_me_p2": "I have been painting for as long as I can remember. Even as a child, while others ran and played, I would sit quietly and draw, completely immersed in my own world. Over time, this passion grew through art clubs and private lessons with other artists, shaping my style.",
+  "about_me_p3": "For me, art is a way to communicate and express myself. Each painting tells a small story, where color, emotion, and the soul of a person come together as one."
 }
