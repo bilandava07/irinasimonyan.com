@@ -6,6 +6,7 @@ import Portfolio from "@/sections/Portfolio";
 import About from "@/sections/About";
 import PhotoOverlay from "@/components/ui/PhotoOverlay";
 import Workshops from "./sections/Workshops";
+import { Spinner } from '@/components/ui/spinner';
 
 const sections = ["home", "gallery", "paintings", "workshops", "about"];
 function App() {
@@ -13,6 +14,9 @@ function App() {
 
 
   const [activeSection, setActiveSection] = useState("home");
+
+  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -62,9 +66,20 @@ function App() {
   return (
     <>
 
+      {/* Loading screen */}
+      {loading && (
+        <div className="fixed inset-0 flex items-center justify-center z-[9999] bg-white">
+          <Spinner className="h-30 w-30 text-black " />
+        </div>
+      )}
 
 
-      <div className="flex w-full h-screen  ">
+
+      {/* Main content only rendered after loading */}
+      <div
+        className={`flex w-full h-screen transition-opacity duration-500 ${loading ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
+      >
         {/* LOGO — POSITIONED ABSOLUTELY & INDEPENDENTLY */}
         <div className="fixed
          top-0
@@ -96,7 +111,7 @@ function App() {
 
           className="flex-1 h-full overflow-y-auto scroll-smooth snap-y snap-mandatory scrollbar-hide"
         >
-          <section id="home" className="h-screen snap-start"><Home /></section>
+          <section id="home" className="h-screen snap-start"><Home onLoad={() => setLoading(false)} /></section>
           <section id="gallery" className="h-screen snap-start"><Gallery onPhotoClick={handlePhotoClick} /></section>
           <section id="paintings" className="h-screen snap-start"><Portfolio onPhotoClick={handlePhotoClick} /></section>
           <section id="workshops" className="h-screen snap-start"><Workshops /></section>

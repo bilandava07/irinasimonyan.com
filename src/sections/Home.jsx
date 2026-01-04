@@ -1,4 +1,4 @@
-export default function Home() {
+export default function Home({onLoad}) {
 
 
   return (
@@ -35,6 +35,7 @@ export default function Home() {
             src="/images/portraits/test.png"
             alt="Painting"
             className="h-full object-cover"
+            onLoad={onLoad}
           />
         </div>
       </div>
