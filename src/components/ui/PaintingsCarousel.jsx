@@ -50,7 +50,7 @@ export default function PaintingsCarousel({ onPhotoClick }) {
                         loop: true,
                     }}
                 >
-                    <h2 className="absolute flex justify-center items-center -translate-y-30 w-full text-3xl font-light mb-6">{t("gallery")}</h2>
+                    <h2 className="absolute flex justify-center items-center lg:-translate-y-10 2xl:-translate-y-30 w-full lg:text-2xl 2xl:text-3xl font-light mb-6">{t("gallery")}</h2>
 
                     {/* SLIDES */}
                     <CarouselContent >
@@ -80,7 +80,7 @@ export default function PaintingsCarousel({ onPhotoClick }) {
 
 
 
-                    <div className="absolute translate-20  flex gap-4 ">
+                    <div className="absolute lg:translate-10 2xl:translate-20 flex lg:gap-3 2xl:gap-5 ">
                         <button
                             className="chevron-container"
                             onClick={() => api?.scrollPrev()}
