@@ -4,7 +4,7 @@ export default function Workshops() {
 
   const { t } = useTranslation();
 
-  const bgImagePath = "/images/workshops_bg.webp"
+  const bgImagePath = "/images/workshops/workshops_bg.jpg"
   return (
     <section className="section h-full w-full overflow-hidden">
 

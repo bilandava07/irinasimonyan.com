@@ -4,7 +4,7 @@ export default function About() {
 
   const { t } = useTranslation();
 
-  const bgImagePath = "/images/about_me_bg.webp"
+  const bgImagePath = "/images/about/about_me_bg.jpg"
   return (
     <section className="relative section h-full w-full overflow-hidden">
 
