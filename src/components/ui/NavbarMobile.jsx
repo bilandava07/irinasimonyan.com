@@ -9,8 +9,8 @@ export default function NavbarMobile({ activeSection }) {
   return (
     <>
       {/* Top bar */}
-      <div className="flex items-center justify-between p-4 bg-white border-b-[0.5px] border-black backdrop-blur-md">
-        <a href="#home" className="w-35 ">
+      <div className="flex items-center justify-between p-3 bg-white border-b-[0.5px] border-black backdrop-blur-md">
+        <a href="#home" className="w-25 ">
           <img className="hover:scale-105 transition-transform duration-300" src="/images/logo.png " />
         </a>
 
