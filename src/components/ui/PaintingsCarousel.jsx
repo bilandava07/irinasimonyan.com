@@ -118,27 +118,30 @@ export default function PaintingsCarousel({ onPhotoClick }) {
 
 
 
-                    <div className="flex flex-col justify-between h-full gap-10 pt-20">
+                    <div className="flex flex-col justify-center h-full gap-14 pt-20">
 
                         {/* Mobile Centered heading in flex flow */}
-                        <h2 className="md:hidden flex justify-center items-center font-nanum  w-full ">{t("gallery")}</h2>
+                        <h2 className="md:hidden flex justify-center items-center font-nanum text-2xl  w-full mb- ">{t("gallery")}</h2>
 
                         {/* Mobile SLIDES */}
                         <CarouselContent >
                             {latestInterleaverPhotos.map((photo) => (
-                                <CarouselItem
+                                <CarouselItem 
                                     key={photo.id}
-                                    className="hidden md:flex   basis-1/2 flex justify-center items-center"
+                                    className="hidden md:flex basis-1/4 flex justify-center items-center p-[0.23rem]"
                                 >
-
-                                    <img
-                                        src={photo.imageUrl}
-                                        alt={`Painting ${photo.id}`}
-                                        className={`${photo.orientation === "square" ? "lg:w-50 xl:w-90 2xl:w-120 " : "lg:w-45 xl:w-70 2xl:w-110 "}`}
-                                        onClick={() => onPhotoClick(photo)}
-                                    />
-
-
+                                    <div
+                                        className={`overflow-hidden flex justify-center items-center 
+                                        ${photo.orientation === "square" ? "h-75" : "h-92"}`}
+                                    >
+                                        <img
+                                            src={photo.imageUrl}
+                                            alt={`Painting ${photo.id}`}
+                                            className={`object-cover 
+                                            ${photo.orientation === "square" ? "h-full" : "h-full"}`}
+                                            onClick={() => onPhotoClick(photo)}
+                                        />
+                                    </div>
                                 </CarouselItem>
 
 
@@ -148,17 +151,17 @@ export default function PaintingsCarousel({ onPhotoClick }) {
 
 
                         {/* Mobiel centered chevrons in flex flow */}
-                        <div className=" flex gap-3 justify-center p-5">
+                        <div className=" flex gap-7 justify-center p-5">
                             <button
                                 className="chevron-container"
-                                onClick={() => desktopApi?.scrollPrev()}
+                                onClick={() => mobileApi?.scrollPrev()}
                             >
                                 <ChevronLeft className="chevron-sizing" />
                             </button>
 
                             <button
                                 className="chevron-container "
-                                onClick={() => desktopApi?.scrollNext()}
+                                onClick={() => mobileApi?.scrollNext()}
                             >
                                 <ChevronRight className="chevron-sizing" />
                             </button>
