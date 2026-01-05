@@ -122,9 +122,9 @@ function App() {
         >
           <section id="home" className="h-screen snap-start"><Home onLoad={() => setLoading(false)} /></section>
           <section id="gallery" className="h-screen snap-start"><Gallery onPhotoClick={handlePhotoClick} /></section>
-          <section id="paintings" className="h-screen snap-start"><Portfolio onPhotoClick={handlePhotoClick} /></section>
-          <section id="workshops" className="h-screen snap-start"><Workshops /></section>
-          <section id="about" className="h-screen snap-start"><About /></section>
+          <section id="paintings" className="hidden md:flexh-screen snap-start"><Portfolio onPhotoClick={handlePhotoClick} /></section>
+          <section id="workshops" className="min-h-screen md:h-screen scroll-mt-14 md:scroll-m-0 snap-start"><Workshops /></section>
+          <section id="about" className="min-h-screen md:h-screen scroll-mt-14 md:scroll-m-0 snap-start"><About /></section>
         </div>
 
         {/* Desktop Navbar */}

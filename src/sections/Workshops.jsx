@@ -6,25 +6,25 @@ export default function Workshops() {
 
   const bgImagePath = "/images/workshops/workshops_bg.jpg"
   return (
-    <section className="section h-full w-full overflow-hidden">
+    <section className="section md:h-full w-full overflow-hidden ">
 
-      <div className="flex h-full w-full text-justify">
-
-
-        <div className="flex flex-col justify-between  lg:mx-20 2xl:mx-40 flex-1 md:flex-[1] lg:flex-[3] 2xl:flex-[2] ">
+      <div className="flex flex-col-reverse md:mt-0  md:flex-row md:h-full w-full text-justify">
 
 
-          <div className='md:mt-5 lg:mt-30 2xl:mt-50'>
+        <div className=" flex flex-col justify-between  lg:mx-20 2xl:mx-40 flex-1 md:flex-[1] lg:flex-[3] 2xl:flex-[2] ">
 
-            <h1 className="lg:pb-9 2xl:pb-15 flex font-normal font-nanum justify-around lg:text-3xl 2xl:text-5xl">{t("workshops_header")}</h1>
 
-            <div className="flex flex-col gap-5 font-thin lg:text-xl 2xl:text-3xl leading-snug">
+          <div className='pb-3 md:p-0 md:mt-5 lg:mt-30 2xl:mt-50'>
+
+            <h1 className="hidden md:flex lg:pb-9 2xl:pb-15 flex font-normal font-nanum justify-around lg:text-3xl 2xl:text-5xl">{t("workshops_header")}</h1>
+
+            <div className="flex flex-col gap-3 md:gap-5 font-thin text-base p-4 lg:text-xl 2xl:text-3xl leading-snug">
               <p>{t("workshops_p1")}</p>
               <p>{t("workshops_p2")}</p>
               <p>{t("workshops_p3")}</p>
             </div>
 
-            <div className='lg:text-xl 2xl:text-2xl lg:pt-10 2xl:pt-15  flex justify-end animate-float'>
+            <div className=' hidden md:flex text-lg p-3 lg:text-xl 2xl:text-2xl lg:pt-10 2xl:pt-15 flex justify-end animate-float'>
               <a
                 href="https://www.instagram.com/art.prostir.lutsk/"
                 target="_blank"
@@ -45,13 +45,63 @@ export default function Workshops() {
 
         </div>
 
-        <div className="h-full  flex-1 md:flex-[1] lg:flex-[3] overflow-hidden">
+        {/* Desktop Image (usual flex flow) */}
+        <div className="hidden md:flex h-full  flex-1 md:flex-[1] lg:flex-[3] overflow-hidden">
           <img
             src={bgImagePath}
             alt="Artist giving instructions during the workshop"
-            className="h-full w-full object-cover object-center"
+            className="h-full w-full object-cover object-top"
           />
         </div>
+
+        {/* Mobile Image (bg only with heading on top) */}
+
+        <div className="md:hidden relative min-h-[80vh] flex-1  overflow-hidden">
+          {/* Background image */}
+          <img
+            src={bgImagePath}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-right -z-20"
+          />
+
+          {/* Foreground content */}
+          <div className='flex flex-col justify-start h-[80vh] relative z-10 '>
+
+
+            <div className="flex justify-end z-10 pt-5 px-5  text-white">
+
+              <h1 className="text-4xl  font-nanum">{t("workshops_header")}</h1>
+
+            </div>
+
+            <div className='flex justify-end px-3 z-10 text-white'>
+              <div className='text-sm px-3 flex justify-end animate-loat'>
+                <a
+                  href="https://www.instagram.com/art.prostir.lutsk/"
+                  target="_blank"
+                  className="
+                font-light
+                hover:scale-110 transition-transform duration-300
+                bg-gradient-to-r from-white via-fuchsia-500 to-pink-600
+                bg-[length:300%_200%]
+                bg-clip-text text-transparent
+                animate-gradient
+              "
+                >
+                  @art.prostir.lutsk
+                </a>
+              </div>
+
+
+
+            </div>
+
+          </div>
+        </div>
+
+
+
 
       </div>
     </section >
