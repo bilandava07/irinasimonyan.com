@@ -27,7 +27,9 @@ export default function PaintingsCarousel({ onPhotoClick }) {
 
     const latestInterleaverPhotos = interleavedPhotos.slice(0, 8)
 
-    const [api, setApi] = React.useState()
+    const [desktopApi, setDesktopApi] = React.useState();
+    const [mobileApi, setMobileApi] = React.useState();
+
 
 
 
@@ -36,25 +38,28 @@ export default function PaintingsCarousel({ onPhotoClick }) {
     return (
         <>
 
-            <div className="relative w-full lg:px-5 2xl:px-15">
+            <div className="relative w-full h-full md:h-auto lg:px-5 2xl:px-15">
 
+
+                {/* DEKSTOP specific Carousel */}
                 <Carousel
-                    className="w-full   mx-auto"
-                    setApi={setApi}
+                    className="hidden md:block w-full mx-auto"
+                    setApi={setDesktopApi}
                     opts={{
-                        align: "start",       
+                        align: "start",
                         containScroll: "trim",
                         loop: true,
                     }}
                 >
-                    <h2 className="absolute flex justify-center items-center font-nanum lg:-translate-y-10 2xl:-translate-y-30 w-full lg:text-2xl 2xl:text-3xl  mb-6">{t("gallery")}</h2>
+                    {/* Desktop absolutely positioned Gallery heading */}
+                    <h2 className="hidden md:flex absolute justify-center items-center font-nanum lg:-translate-y-10 2xl:-translate-y-30 w-full lg:text-2xl 2xl:text-3xl  mb-6">{t("gallery")}</h2>
 
-                    {/* SLIDES */}
+                    {/* DEKSTOP SLIDES */}
                     <CarouselContent >
                         {latestInterleaverPhotos.map((photo) => (
                             <CarouselItem
                                 key={photo.id}
-                                className="py-20  basis-1/4 md:basis-1/4 lg:basis-1/4 2xl:basis-1/5 flex justify-center items-center"
+                                className="hidden md:flex py-20  md:basis-1/4 lg:basis-1/4 2xl:basis-1/5 flex justify-center items-center"
                             >
 
                                 <img
@@ -73,30 +78,102 @@ export default function PaintingsCarousel({ onPhotoClick }) {
                     </CarouselContent>
 
 
-
-
-
-
-                    <div className="absolute lg:translate-10 2xl:translate-20 flex gap-5 lg:gap-3 2xl:gap-5 ">
+                    {/* Desktop absolutely positioned chevrons */}
+                    <div className="hidden md:flex absolute lg:translate-10 2xl:translate-20 flex gap-5 lg:gap-3 2xl:gap-5 ">
                         <button
                             className="chevron-container"
-                            onClick={() => api?.scrollPrev()}
+                            onClick={() => desktopApi?.scrollPrev()}
                         >
                             <ChevronLeft className="chevron-sizing" />
                         </button>
 
                         <button
                             className="chevron-container "
-                            onClick={() => api?.scrollNext()}
+                            onClick={() => desktopApi?.scrollNext()}
                         >
                             <ChevronRight className="chevron-sizing" />
                         </button>
 
+                    </div>
+
+
+                </Carousel>
+
+
+
+                {/* Mobile Verision of the Carousel */}
+
+                <Carousel
+                    className=" md:hidden w-full h-full mx-auto"
+                    setApi={setMobileApi}
+                    opts={{
+                        align: "start",
+                        containScroll: "trim",
+                        loop: true,
+                    }}
+                >
+
+
+
+
+
+
+                    <div className="flex flex-col justify-between h-full gap-10 pt-20">
+
+                        {/* Mobile Centered heading in flex flow */}
+                        <h2 className="md:hidden flex justify-center items-center font-nanum  w-full ">{t("gallery")}</h2>
+
+                        {/* Mobile SLIDES */}
+                        <CarouselContent >
+                            {latestInterleaverPhotos.map((photo) => (
+                                <CarouselItem
+                                    key={photo.id}
+                                    className="hidden md:flex   basis-1/2 flex justify-center items-center"
+                                >
+
+                                    <img
+                                        src={photo.imageUrl}
+                                        alt={`Painting ${photo.id}`}
+                                        className={`${photo.orientation === "square" ? "lg:w-50 xl:w-90 2xl:w-120 " : "lg:w-45 xl:w-70 2xl:w-110 "}`}
+                                        onClick={() => onPhotoClick(photo)}
+                                    />
+
+
+                                </CarouselItem>
+
+
+
+                            ))}
+                        </CarouselContent>
+
+
+                        {/* Mobiel centered chevrons in flex flow */}
+                        <div className=" flex gap-3 justify-center p-5">
+                            <button
+                                className="chevron-container"
+                                onClick={() => desktopApi?.scrollPrev()}
+                            >
+                                <ChevronLeft className="chevron-sizing" />
+                            </button>
+
+                            <button
+                                className="chevron-container "
+                                onClick={() => desktopApi?.scrollNext()}
+                            >
+                                <ChevronRight className="chevron-sizing" />
+                            </button>
+
+                        </div>
 
 
 
                     </div>
+
                 </Carousel>
+
+
+
+
             </div>
 
         </>
