@@ -68,7 +68,7 @@ export default function Navbar({ activeSection }) {
             <div className="flex justify-end">
 
                 <div className="flex flex-col  space-y-4 transition-all">
-                    <a href="mailto:ira@example.com" target="_blank" className=" flex justify-center">️
+                    <a href="mailto:irinas.paintings21@gmail.com" target="_blank" className=" flex justify-center">️
 
                         <EmailIcon className="md: w-5 xl:w-6 2xl:w-8 fill-black icon-hover" />
 
