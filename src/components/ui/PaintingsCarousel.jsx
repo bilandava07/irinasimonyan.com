@@ -1,5 +1,4 @@
 import * as React from "react"
-import Autoplay from "embla-carousel-autoplay"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import {
     Carousel,
@@ -32,9 +31,7 @@ export default function PaintingsCarousel({ onPhotoClick }) {
 
 
 
-    const plugin = React.useRef(
-        Autoplay({ delay: 3000, stopOnInteraction: true })
-    )
+
 
     return (
         <>
@@ -57,7 +54,7 @@ export default function PaintingsCarousel({ onPhotoClick }) {
                         {latestInterleaverPhotos.map((photo) => (
                             <CarouselItem
                                 key={photo.id}
-                                className="py-20  md:basis-1/4 lg:basis-1/4 2xl:basis-1/5 flex justify-center items-center"
+                                className="py-20  basis-1/4 md:basis-1/4 lg:basis-1/4 2xl:basis-1/5 flex justify-center items-center"
                             >
 
                                 <img
@@ -80,7 +77,7 @@ export default function PaintingsCarousel({ onPhotoClick }) {
 
 
 
-                    <div className="absolute lg:translate-10 2xl:translate-20 flex lg:gap-3 2xl:gap-5 ">
+                    <div className="absolute lg:translate-10 2xl:translate-20 flex gap-5 lg:gap-3 2xl:gap-5 ">
                         <button
                             className="chevron-container"
                             onClick={() => api?.scrollPrev()}
