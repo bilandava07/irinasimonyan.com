@@ -6,9 +6,10 @@ export default function Home({onLoad}) {
 
 
 
-      <div className=" max-w-[80vw] h-full flex items-center ml-auto relative z-10">
+      <div className=" md:max-w-[80vw] h-full flex items-center ml-auto relative z-10">
+
         {/* LEFT TEXT */}
-        <div className="z-10">
+        <div className=" hidden md:block z-10">
           <h1 className="
             font-bodoni
             tracking-wide

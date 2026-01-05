@@ -7,6 +7,7 @@ import About from "@/sections/About";
 import PhotoOverlay from "@/components/ui/PhotoOverlay";
 import Workshops from "./sections/Workshops";
 import { Spinner } from '@/components/ui/spinner';
+import NavbarMobile from "@/components/ui/NavbarMobile";
 
 const sections = ["home", "gallery", "paintings", "workshops", "about"];
 function App() {
@@ -77,10 +78,14 @@ function App() {
 
       {/* Main content only rendered after loading */}
       <div
-        className={`flex w-full h-screen transition-opacity duration-500 ${loading ? "opacity-0 pointer-events-none" : "opacity-100"
-          }`}
+        className={`flex flex-col md:flex-row
+           w-full
+           h-screen
+           transition-opacity
+           duration-500 ${loading ? "opacity-0 pointer-events-none" : "opacity-100"}
+          `}
       >
-        {/* LOGO — POSITIONED ABSOLUTELY & INDEPENDENTLY */}
+        {/* LOGO — POSITIONED ABSOLUTELY & INDEPENDENTLY FOR DESKTOP */}
         <div className="fixed
          top-0
          left-0
@@ -91,7 +96,12 @@ function App() {
          rounded-br-4xl
          z-20
          backdrop-blur-md 
-         sd:w-20
+
+         hidden
+         md:block
+
+         
+         sm:w-20
          md:w-45
          xl:w-55
          2xl:w-70
@@ -108,8 +118,7 @@ function App() {
 
         {/* Scrollable Content */}
         <div
-
-          className="flex-1 h-full overflow-y-auto scroll-smooth snap-y snap-mandatory scrollbar-hide"
+          className="md:flex-1 h-full overflow-y-auto md:scroll-smooth md:snap-y md:snap-mandatory scrollbar-hide"
         >
           <section id="home" className="h-screen snap-start"><Home onLoad={() => setLoading(false)} /></section>
           <section id="gallery" className="h-screen snap-start"><Gallery onPhotoClick={handlePhotoClick} /></section>
@@ -118,10 +127,17 @@ function App() {
           <section id="about" className="h-screen snap-start"><About /></section>
         </div>
 
-        {/* Navbar */}
-        <div className="w-[12%] min-w-[120px] border-l h-full ">
+        {/* Desktop Navbar */}
+        <div className=" hidden md:block w-[12%] min-w-[120px] border-l h-full">
           <Navbar activeSection={activeSection} />
         </div>
+
+        {/* Mobile Navbar */}
+        <div className="fixed top-0 left-0 right-0 z-10 md:hidden">
+          <NavbarMobile activeSection={activeSection} />
+        </div>
+
+
       </div>
 
 
