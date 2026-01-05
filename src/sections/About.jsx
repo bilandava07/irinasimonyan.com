@@ -11,7 +11,7 @@ export default function About() {
       <div className="flex flex-col-reverse md:flex-row md:h-full w-full text-justify">
 
         {/* Mobile footer */}
-        <div className='md:hidden flex justify-center bg-gray-100 p-1'>
+        <div className='md:hidden flex justify-center p-1'>
 
           <div className="text-[0.3em] text-gray-500">
             @ 2026 Irina Simonyan. All rights reserved
