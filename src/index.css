@@ -151,11 +151,11 @@
 }
 
 .chevron-container {
-  @apply w-fit bg-black/10 text-black md:p-1 lg:p-2 xl:p-3 rounded-full cursor-pointer hover:bg-black/9
+  @apply w-fit bg-black/10 text-black p-1 md:p-1 lg:p-2 xl:p-3 rounded-full cursor-pointer hover:bg-black/9
 }
 
 .chevron-sizing {
-  @apply md:w-4 lg:w-5 2xl:w-6 h-auto
+  @apply w-5 md:w-4 lg:w-5 2xl:w-6 h-auto
 }
 
 
