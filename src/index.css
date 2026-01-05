@@ -155,7 +155,7 @@
 }
 
 .chevron-sizing {
-  @apply w-5 md:w-4 lg:w-5 2xl:w-6 h-auto
+  @apply w-6 md:w-4 lg:w-5 2xl:w-6 h-auto
 }
 
 
