@@ -97,6 +97,8 @@ export default function Workshops() {
 
             </div>
 
+            <div className="absolute inset-0 h-1/6 bg-gradient-to-b from-black opacity-80 z-5"></div>
+
           </div>
         </div>
 
