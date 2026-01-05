@@ -13,7 +13,7 @@ export default function About() {
         {/* Mobile footer */}
         <div className='md:hidden flex justify-center p-1'>
 
-          <div className="text-[0.3em] text-gray-500">
+          <div className="text-[0.5em] text-gray-500">
             @ 2026 Irina Simonyan. All rights reserved
           </div>
 
