@@ -19,7 +19,7 @@ export default function NavbarMobile({ activeSection }) {
     <>
       {/* Top bar */}
       <div className="flex items-center justify-between h-14 p-3 bg-white border-b-[0.5px] border-black ">
-        <a href="#home" className="w-30 ">
+        <a href="#home" className="w-25 ">
           <img className="hover:scale-105 transition-transform duration-300" src="/images/logo.png " />
         </a>
 
@@ -43,14 +43,14 @@ export default function NavbarMobile({ activeSection }) {
               {/* Top: language */}
               <div className="flex justify-end items-center">
 
-                <div className={` ${i18n.language === 'ua' ? "font-base" : "font-thin"} text-lg cursor-pointer "`} onClick={() => switchLanguage('ua')}>
+                <div className={` ${i18n.language === 'ua' ? "font-semibold" : "font-light"} text-lg cursor-pointer "`} onClick={() => switchLanguage('ua')}>
                   ua
                 </div>
 
-                <div className="text-lg font-thin mx-1">|</div>
+                <div className="text-lg mx-1">|</div>
 
 
-                <div className={` ${i18n.language === 'en' ? "font-base" : "font-thin"} text-lg cursor-pointer "`} onClick={() => switchLanguage('en')}>
+                <div className={` ${i18n.language === 'en' ? "font-semibold" : "font-light"} text-lg cursor-pointer "`} onClick={() => switchLanguage('en')}>
                   en
                 </div>
 
@@ -72,7 +72,7 @@ export default function NavbarMobile({ activeSection }) {
                 key={item.id}
                 href={`#${item.id}`}
                 onClick={() => setOpen(false)}
-                className={`block py-4 px-4  text-lg ${activeSection === item.id ? "font-base" : "font-thin"
+                className={`block py-4 px-4 text-lg ${activeSection === item.id ? "font-semibold" : "font-light"
                   }`}
               >
                 {t(item.label)}
