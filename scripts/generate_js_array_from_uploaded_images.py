@@ -12,7 +12,9 @@ JS_FILE = "src/data/photos.js"
 PUBLIC_DIR = os.path.join(SCRIPT_DIR, "..", "public/images")
 THUMBNAILS_DIR = os.path.join(SCRIPT_DIR, "..", "public/images_thumbnails")
 
-IGNORED_FOLDERS = ('about', 'workshops')
+# folders that are ignored, meaning their contents do not appear in galley and paintings
+
+IGNORED_FOLDERS = ('about', 'workshops','home')
 
 photos = []
 photo_id = 1
