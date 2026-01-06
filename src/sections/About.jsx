@@ -6,7 +6,7 @@ export default function About() {
 
   const bgImagePath = "/images/about/about_me_bg.jpg"
   return (
-    <section className="relative section md:h-full w-full overflow-hidden">
+    <div className="relative section md:h-full w-full overflow-hidden">
 
       <div className="flex flex-col-reverse md:flex-row md:h-full w-full text-justify">
 
@@ -81,7 +81,7 @@ export default function About() {
 
 
 
-    </section>
+    </div>
   );
 }
 

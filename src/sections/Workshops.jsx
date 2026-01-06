@@ -6,7 +6,7 @@ export default function Workshops() {
 
   const bgImagePath = "/images/workshops/workshops_bg.jpg"
   return (
-    <section className="section md:h-full w-full overflow-hidden ">
+    <div className="section md:h-full w-full overflow-hidden ">
 
       <div className="flex flex-col-reverse md:mt-0  md:flex-row md:h-full w-full text-justify">
 
@@ -106,6 +106,6 @@ export default function Workshops() {
 
 
       </div>
-    </section >
+    </div >
   );
 }
