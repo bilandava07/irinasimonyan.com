@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from 'react-i18next';
+import InstagramIcon from "@/icons/InstagramIcon.svg?react";
+import EmailIcon from "@/icons/EmailIcon.svg?react";
+import ThreadsIcon from "@/icons/ThreadsIcon.svg?react";
 
 export default function NavbarMobile({ activeSection }) {
   const [open, setOpen] = useState(false);
@@ -38,46 +41,84 @@ export default function NavbarMobile({ activeSection }) {
 
           <div className=" w-full h-full bg-white">
 
-            <div className="flex justify-between p-4 h-14 border-b-[0.5px] border-black ">
+            <div className="flex flex-col h-full justify-between">
 
-              {/* Top: language */}
-              <div className="flex justify-end items-center">
+              <div className="flex flex-col">
 
-                <div className={` ${i18n.language === 'ua' ? "font-semibold" : "font-light"} text-lg cursor-pointer "`} onClick={() => switchLanguage('ua')}>
-                  ua
+                <div className="flex justify-between p-4 h-14 border-b-[0.5px] border-black ">
+
+                  {/* Top: language */}
+                  <div className="flex justify-end items-center">
+
+                    <div className={` ${i18n.language === 'ua' ? "font-semibold" : "font-light"} text-lg cursor-pointer "`} onClick={() => switchLanguage('ua')}>
+                      ua
+                    </div>
+
+                    <div className="text-lg mx-1">|</div>
+
+
+                    <div className={` ${i18n.language === 'en' ? "font-semibold" : "font-light"} text-lg cursor-pointer "`} onClick={() => switchLanguage('en')}>
+                      en
+                    </div>
+
+                  </div>
+
+
+                  <button
+                    className="text-xl"
+                    onClick={() => setOpen(false)}
+                  >
+                    ✕
+                  </button>
                 </div>
 
-                <div className="text-lg mx-1">|</div>
 
+                <div className="mt-4">
 
-                <div className={` ${i18n.language === 'en' ? "font-semibold" : "font-light"} text-lg cursor-pointer "`} onClick={() => switchLanguage('en')}>
-                  en
+                  {navItemsMobile.map((item) => (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      onClick={() => setOpen(false)}
+                      className={`block py-4 px-4 text-lg ${activeSection === item.id ? "font-semibold" : "font-light"
+                        }`}
+                    >
+                      {t(item.label)}
+                    </a>
+                  ))}
+
                 </div>
+
+
 
               </div>
 
 
-              <button
-                className="text-xl"
-                onClick={() => setOpen(false)}
-              >
-                ✕
-              </button>
+              {/* Bottom: contact */}
+              <div className="flex justify-start p-4">
 
+                <div className="flex flex-col  space-y-4 transition-all">
+                  <a href="mailto:irinas.paintings21@gmail.com" className="flex justify-center">️
 
+                    <EmailIcon className="w-6 fill-black" />
 
+                  </a>
+                  <a href="https://www.threads.com/@iriina.simonyan?igshid=NTc4MTIwNjQ2YQ==" target="_blank" className="flex justify-center">
+
+                    <ThreadsIcon className="w-7  fill-black" />
+
+                  </a>
+                  <a href="https://www.instagram.com/iriina.simonyan?igsh=MTNtbnFvMmZldzlheA%3D%3D&utm_source=qr" target="_blank" className="flex justify-center">
+
+                    <InstagramIcon className="w-8  fill-black" />
+
+                  </a>
+
+                </div>
+
+              </div>
             </div>
-            {navItemsMobile.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                onClick={() => setOpen(false)}
-                className={`block py-4 px-4 text-lg ${activeSection === item.id ? "font-semibold" : "font-light"
-                  }`}
-              >
-                {t(item.label)}
-              </a>
-            ))}
+
           </div>
         </div>
       )}
