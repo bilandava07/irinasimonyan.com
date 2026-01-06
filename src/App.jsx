@@ -120,7 +120,7 @@ function App() {
         <div
           className="md:flex-1 h-full overflow-y-auto md:scroll-smooth md:snap-y md:snap-mandatory scrollbar-hide"
         >
-          <section id="home" className="h-screen snap-start"><Home onLoad={() => setLoading(false)} /></section>
+          <section id="home" className="min-h-screen md:h-screen scroll-m-14 md:scroll-m-0 snap-start"><Home onLoad={() => setLoading(false)} /></section>
           <section id="gallery" className="h-screen snap-start"><Gallery onPhotoClick={handlePhotoClick} /></section>
           <section id="paintings" className="hidden md:block h-screen snap-start"><Portfolio onPhotoClick={handlePhotoClick} /></section>
           <section id="workshops" className="min-h-screen md:h-screen scroll-mt-14 md:scroll-m-0 snap-start"><Workshops /></section>
