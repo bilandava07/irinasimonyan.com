@@ -37,7 +37,7 @@ export default function Portfolio({ onPhotoClick }) {
   };
 
   return (
-    <section className="section h-full  flex items-center justify-center">
+    <div className="h-full  flex items-center justify-center">
 
       {/* Left sidebar */}
 
@@ -116,6 +116,6 @@ export default function Portfolio({ onPhotoClick }) {
         {/* Portfolio */}
         <MasonryGallery photos={filteredPhotos} scrollRef={scrollRef} onPhotoClick={onPhotoClick} />
       </div>
-    </section>
+    </div>
   );
 }
