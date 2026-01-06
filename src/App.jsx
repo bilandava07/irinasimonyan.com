@@ -28,7 +28,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.6 } // 60% visible
+      { threshold: 0.5 } // 50% visible
     );
 
     sections.forEach((id) => {
