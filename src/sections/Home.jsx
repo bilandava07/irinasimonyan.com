@@ -1,6 +1,6 @@
 export default function Home({ onLoad }) {
 
-  const bgImagePath = "/images/portraits/home_main_portrait.jpg";
+  const bgImagePath = "/images/home/home_main_portrait.jpg";
 
 
 
