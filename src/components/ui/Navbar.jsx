@@ -68,12 +68,12 @@ export default function Navbar({ activeSection }) {
             <div className="flex justify-end">
 
                 <div className="flex flex-col  space-y-4 transition-all">
-                    <a href="mailto:irinas.paintings21@gmail.com" target="_blank" className=" flex justify-center">️
+                    <a href="mailto:irinas.paintings21@gmail.com" className="flex justify-center">️
 
                         <EmailIcon className="md: w-5 xl:w-6 2xl:w-8 fill-black icon-hover" />
 
                     </a>
-                    <a href="https://www.threads.com/@iriina.simonyan?igshid=NTc4MTIwNjQ2YQ==" target="_blank" className=" flex justify-center">
+                    <a href="https://www.threads.com/@iriina.simonyan?igshid=NTc4MTIwNjQ2YQ==" target="_blank" className="flex justify-center">
 
                         <ThreadsIcon className=" md: w-6 xl:w-7 2xl:w-9 fill-black icon-hover" />
 
