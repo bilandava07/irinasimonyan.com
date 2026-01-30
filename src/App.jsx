@@ -86,7 +86,7 @@ function App() {
           `}
       >
         {/* LOGO — POSITIONED ABSOLUTELY & INDEPENDENTLY FOR DESKTOP */}
-        <div className="fixed
+        <h1 className="fixed
          top-0
          left-0
          md:p-3
@@ -109,22 +109,20 @@ function App() {
          ">
 
           <a href="#home">
-            <img className="hover:scale-105 transition-transform duration-300" src="/images/logo.png" />
+            <img className="hover:scale-105 transition-transform duration-300" src="/images/logo.png" alt="Simonyan Irina Logo" />
           </a>
 
-
-
-        </div>
+        </h1>
 
         {/* Scrollable Content */}
         <div
-          className="md:flex-1 h-full overflow-y-auto md:scroll-smooth md:snap-y md:snap-mandatory scrollbar-hide"
+          className="md:flex-1 h-full overflow-y-auto md:scroll-smooth md:nap-y md:nap-mandatory scrollbar-hide"
         >
-          <section id="home" className="min-h-screen md:h-screen scroll-m-14 md:scroll-m-0 snap-start"><Home onLoad={() => setLoading(false)} /></section>
-          <section id="gallery" className="h-screen snap-start"><Gallery onPhotoClick={handlePhotoClick} /></section>
-          <section id="paintings" className="hidden md:block h-screen snap-start"><Portfolio onPhotoClick={handlePhotoClick} /></section>
-          <section id="workshops" className="min-h-screen md:h-screen scroll-mt-14 md:scroll-m-0 snap-start"><Workshops /></section>
-          <section id="about" className="min-h-screen md:h-screen scroll-mt-14 md:scroll-m-0 snap-start"><About /></section>
+          <section id="home" className="min-h-screen md:h-screen scroll-m-14 md:scroll-m-0 nap-start"><Home onLoad={() => setLoading(false)} /></section>
+          <section id="gallery" className="h-screen nap-start"><Gallery onPhotoClick={handlePhotoClick} /></section>
+          <section id="paintings" className="hidden md:block h-screen nap-start"><Portfolio onPhotoClick={handlePhotoClick} /></section>
+          <section id="workshops" className="min-h-screen md:h-screen scroll-mt-14 md:scroll-m-0 nap-start"><Workshops /></section>
+          <section id="about" className="min-h-screen md:h-screen scroll-mt-14 md:scroll-m-0 nap-start"><About /></section>
         </div>
 
         {/* Desktop Navbar */}
